@@ -1,0 +1,209 @@
+*{
+    box-sizing: border-box;
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+}
+
+body>header{
+    display: flex;
+    flex-direction: row;
+    background-color: rgb(2, 76, 170);
+    border-bottom: 1px solid white;
+    position: relative;
+    align-content: center; /* necesario para posicionar el menú desplegable */
+}
+
+.header-logo{
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 8px;
+    border-radius: 24px;
+    padding: 8px;
+}
+.header-logo>img{
+    min-width: 120px; 
+    min-height: 30px;
+    max-width: 240px;
+    max-height: 60px;
+    width: auto;
+    height: auto;
+}
+
+/* Botón hamburguesa */
+.menu-toggle {
+    background: none;
+    border: none;
+    font-size: 24px;
+    color: white;
+    cursor: pointer;
+    margin: 12px 16px 12px;
+    align-self: center;
+}
+
+/* Menú oculto en móviles */
+.nav-inicio {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    background-color: rgb(2, 76, 170);
+    position: absolute;
+    top: 100%; /* debajo del header */
+    left: 0;
+    width: 100%;
+    padding: 8px 0;
+}
+
+.nav-inicio>a{
+    font-size: 18px; 
+    font-family:'Lora';
+    text-decoration: none;
+    color: white;
+    padding: 12px;
+    width: 100%;
+    text-align: center;
+}
+
+/* Clase que se activa con JS */
+.nav-inicio.active {
+    display: flex;
+}
+
+/* Vista desktop */
+@media (min-width: 768px) {
+    .menu-toggle {
+        display: none;
+    }
+
+    .nav-inicio {
+        display: flex !important;
+        flex-direction: row;
+        justify-content: center;
+        position: static;
+        background: none;
+        width: auto;
+        padding: 0;
+    }
+
+    .nav-inicio>a {
+        color: white;
+        padding: 10px 20px;
+        width: auto;
+        text-align: center;
+    }
+}
+
+body>main{
+    background-color: rgb(9, 16, 87);
+    padding: 12px 16px;
+    font-family: 'Lora';
+}
+
+.presentacion,.soluciones-preview,.fin-presentacion{
+    margin-bottom: 32px;
+}
+
+.presentacion-descripcion>p,.presentacion-descripcion>a{
+    font-family: 'Lora';
+    font-size: 16px;
+    padding: 8px 12px;
+    color: white;
+}
+.presentacion-descripcion>a{
+    display: block;
+    background-color: rgb(2, 76, 170);
+    text-decoration: none;
+    margin: 8px 12px;
+    border-radius: 12px ;
+}
+
+.soluciones-preview{
+    background-color: rgb(236, 131, 5);
+}
+
+.solucion-comercial,.solucion-institucional{
+    margin: 8px 12px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.logo-sitio-comercial>img,
+.logo-sitio-institucional>img{
+    width: 50px;
+    height: 50px;
+}
+
+.solucion-comercial>a,.solucion-institucional>a{
+    background-color: rgb(219, 211, 211);
+    color: rgb(2, 76, 170);
+    text-decoration: none;
+    padding: 8px 12px;
+    margin-bottom: 8px;
+    border-radius: 12px;
+}
+
+.fin-presentacion{
+    background-color: rgb(219, 211, 211); 
+}
+
+.fin-presentacion>p,.fin-presentacion>a{
+    padding: 8px 12px;
+}
+
+.fin-presentacion-pregunta,.fin-presentacion-pregunta-2{
+    background-color: rgb(2, 76, 170);
+    color: white;
+}
+
+.fin-presentacion>a{
+    display: inline-block;
+    text-decoration: none;
+    margin: 8px 12px;
+    padding: 8px 12px;
+    border-radius: 12px;
+    background-color: rgb(9, 16, 87);
+    color: white;
+}
+
+body>footer{
+    font-family: 'Lora'; 
+    font-size: 20px;
+    background-color: rgb(236, 131, 5);
+    display: flex;
+    flex-direction: column;
+}
+
+.footer-columna{
+    display: flex;
+    flex-direction: column;
+    padding: 16px 12px;
+}
+
+.footer-columna>a{
+    text-decoration: none;
+    color: rgb(9, 16, 87);
+    padding: 8px 0px;
+}
+
+.footer-redes{
+    display: flex;
+    flex-direction: row;
+    padding: 8px 12px;
+}
+
+.footer-redes>a{
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    width: 25px; 
+    height: 25px;
+    margin-right: 8px;
+}
+
+.footer-derechos{
+    padding: 8px 12px;
+}
